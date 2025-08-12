@@ -52,7 +52,6 @@
         font-size: 12px;
         color: #666;
     }
-    /* Hiệu ứng smooth */
     .mod-list {
         max-height: 0;
         overflow: hidden;
@@ -60,7 +59,7 @@
         padding-left: 35px;
     }
     .mod-list.open {
-        max-height: 300px; /* đủ lớn để chứa nội dung */
+        max-height: 300px;
     }
     .mod-item {
         background: white;
@@ -86,6 +85,11 @@
 </style>
 </head>
 <body>
+
+<!-- Nhạc nền -->
+<audio id="bgMusic" autoplay loop muted>
+    <source src="videoplayback1.mp3" type="audio/mpeg">
+</audio>
 
 <header>KazukiAOV</header>
 
@@ -127,6 +131,15 @@
 function toggleMods() {
     document.getElementById("modList").classList.toggle("open");
 }
+
+// Bật tiếng nhạc khi người dùng click vào trang
+document.body.addEventListener("click", function() {
+    let music = document.getElementById("bgMusic");
+    if (music.muted) {
+        music.muted = false;
+        music.play();
+    }
+}, { once: true });
 </script>
 
 </body>
