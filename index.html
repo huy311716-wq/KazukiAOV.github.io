@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DATALLAIN WEBPAGE</title>
+    <title>KazukiAOV</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
         body {
@@ -35,6 +35,97 @@
         .card:hover {
             background-color: #f0f0f0;
         }
+        .icon {
+            font-size: 28px;
+            margin-right: 15px;
+            color: #444;
+        }
+        .text {
+            flex: 1;
+        }
+        .title {
+            font-weight: bold;
+        }
+        .desc {
+            font-size: 13px;
+            color: #555;
+        }
+        .hidden {
+            display: none;
+        }
+        .sub-item {
+            background: #fff;
+            margin: 0 20px 10px 20px;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            cursor: pointer;
+        }
+        .sub-item:hover {
+            background: #f0f0f0;
+        }
+        .download-btn {
+            display: inline-block;
+            background: #007bff;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+        .download-btn:hover {
+            background: #0056b3;
+        }
+        footer {
+            text-align: center;
+            font-size: 12px;
+            padding: 10px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>KazukiAOV</header>
+
+    <!-- Mục chọn mod -->
+    <div class="card" onclick="toggleMods()">
+        <span class="material-icons icon">apps</span>
+        <div class="text">
+            <div class="title">CHỌN MOD</div>
+            <div class="desc">Click để chọn một bản mod</div>
+        </div>
+    </div>
+
+    <!-- Danh sách mod con -->
+    <div id="modList" class="hidden">
+        <div class="sub-item" onclick="showDownload('https://link2m.com/m5k0tH')">
+            Mod skin Billow Thiên Ách Độ tướng sáng đậm
+        </div>
+    </div>
+
+    <!-- Nút download -->
+    <div id="downloadSection" class="hidden" style="text-align:center; padding:20px;">
+        <p>Bấm để tải xuống:</p>
+        <a id="downloadLink" href="#" target="_blank" class="download-btn">Download</a>
+    </div>
+
+    <footer>©KazukiAOV | Ver1.0</footer>
+
+    <script>
+        function toggleMods() {
+            const modList = document.getElementById('modList');
+            modList.classList.toggle('hidden');
+        }
+        function showDownload(link) {
+            const downloadSection = document.getElementById('downloadSection');
+            const downloadLink = document.getElementById('downloadLink');
+            downloadLink.href = link;
+            downloadSection.classList.remove('hidden');
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>        }
         .icon {
             font-size: 28px;
             margin-right: 15px;
