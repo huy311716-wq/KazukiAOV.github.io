@@ -1,105 +1,112 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KazukiAOV</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #f8f8f8;
-        margin: 0;
-        padding: 0;
-    }
-    header {
-        text-align: center;
-        font-size: 22px;
-        font-weight: bold;
-        padding: 15px;
-        background: white;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .mod-container {
-        margin: 15px;
-        border-radius: 15px;
-        padding: 15px;
-        background: white;
-        box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-    .mod-header {
-        font-weight: bold;
-        font-size: 18px;
-        margin-bottom: 5px;
-    }
-    .mod-desc {
-        font-size: 13px;
-        color: gray;
-        margin-bottom: 15px;
-    }
-    .mod-item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 12px;
-        border-radius: 12px;
-        margin-bottom: 10px;
-        background: url('https://i.ibb.co/xHsbM7g/billow-thien-ach.jpg') center/cover no-repeat;
-        color: white;
-    }
-    .mod-overlay {
-        background: rgba(0,0,0,0.4);
-        padding: 10px;
-        border-radius: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-    }
-    .mod-info {
-        display: flex;
-        flex-direction: column;
-    }
-    .mod-title {
-        font-weight: bold;
-        font-size: 15px;
-    }
-    .mod-sub {
-        font-size: 12px;
-        opacity: 0.8;
-    }
-    .download-btn {
-        background: #ff4d4d;
-        border: none;
-        color: white;
-        padding: 6px 12px;
-        border-radius: 8px;
-        font-size: 13px;
-        cursor: pointer;
-        text-decoration: none;
-    }
-    .download-btn:hover {
-        background: #e60000;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KazukiAOV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+        h2 {
+            margin-bottom: 5px;
+        }
+        p {
+            margin-top: 0;
+            color: #666;
+        }
+        .card {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+        .card img {
+            width: 120px;
+            height: 100%;
+            object-fit: cover;
+        }
+        .card-content {
+            flex: 1;
+            padding: 10px 15px;
+        }
+        .card-title {
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .card-desc {
+            font-size: 13px;
+            color: #888;
+            margin: 5px 0;
+        }
+        .download-btn {
+            background: #ff4d4f;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .download-btn:hover {
+            background: #d9363e;
+        }
+    </style>
 </head>
 <body>
+    <header>KazukiAOV</header>
+    <div class="container">
+        <h2>CHỌN MOD</h2>
+        <p>Click để chọn một bản mod</p>
 
-<header>KazukiAOV</header>
-
-<div class="mod-container">
-    <div class="mod-header">CHỌN MOD</div>
-    <div class="mod-desc">Click để chọn một bản mod</div>
-
-    <div class="mod-item">
-        <div class="mod-overlay">
-            <div class="mod-info">
-                <div class="mod-title">Billow Thiên Ách Độ tướng sáng đậm</div>
-                <div class="mod-sub">Effects - Sound - Button</div>
+        <!-- Mod 1 -->
+        <div class="card">
+            <img src="data:image/jpeg;base64,PUT-YOUR-BASE64-HERE" alt="Billow">
+            <div class="card-content">
+                <div class="card-title">Billow Thiên Ách Độ tướng sáng đậm</div>
+                <div class="card-desc">Effects - Sound - Button</div>
+                <a href="https://link2m.com/m5k0tH" class="download-btn">Tải xuống</a>
             </div>
-            <a href="https://link2m.com/m5k0tH" target="_blank" class="download-btn">Tải xuống</a>
+        </div>
+
+        <!-- Mod 2 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/120x100.png?text=Mod+2" alt="Mod 2">
+            <div class="card-content">
+                <div class="card-title">Mod Skin 2</div>
+                <div class="card-desc">Effects - Sound</div>
+                <a href="#" class="download-btn">Tải xuống</a>
+            </div>
+        </div>
+
+        <!-- Mod 3 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/120x100.png?text=Mod+3" alt="Mod 3">
+            <div class="card-content">
+                <div class="card-title">Mod Skin 3</div>
+                <div class="card-desc">Effects Only</div>
+                <a href="#" class="download-btn">Tải xuống</a>
+            </div>
         </div>
     </div>
-</div>
-
 </body>
 </html>
