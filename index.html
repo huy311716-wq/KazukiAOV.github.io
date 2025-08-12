@@ -52,10 +52,15 @@
         font-size: 12px;
         color: #666;
     }
+    /* Hiệu ứng smooth */
     .mod-list {
-        display: none;
-        margin-top: 5px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
         padding-left: 35px;
+    }
+    .mod-list.open {
+        max-height: 300px; /* đủ lớn để chứa nội dung */
     }
     .mod-item {
         background: white;
@@ -120,12 +125,7 @@
 
 <script>
 function toggleMods() {
-    let modList = document.getElementById("modList");
-    if (modList.style.display === "block") {
-        modList.style.display = "none";
-    } else {
-        modList.style.display = "block";
-    }
+    document.getElementById("modList").classList.toggle("open");
 }
 </script>
 
