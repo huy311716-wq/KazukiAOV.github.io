@@ -71,20 +71,21 @@
         background: #00000033;
         text-decoration: none;
     }
-    .guide {
-        background: white;
+    /* Nút hướng dẫn */
+    .guide-btn {
+        display: block;
+        width: 100%;
         padding: 15px;
+        border: none;
         border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    .video-btn {
-        display: inline-block;
-        padding: 8px 14px;
-        border-radius: 8px;
-        font-size: 14px;
+        background: linear-gradient(to right, #00b09b, #96c93d);
         color: white;
-        background: #1890ff;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
         text-decoration: none;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        cursor: pointer;
     }
 </style>
 </head>
@@ -95,7 +96,7 @@
 
     <!-- CHỌN MOD -->
     <div class="section">
-        <div class="section-title" onclick="toggleSection(this)">Chọn Skin Bạn Muốn Mod</div>
+        <div class="section-title" onclick="toggleSection(this)">CHỌN MOD</div>
         <div class="section-content">
             <div class="mod">
                 <div class="mod-title">BILLOW THIÊN TƯỚNG ĐỘ ÁCH</div>
@@ -108,12 +109,10 @@
         </div>
     </div>
 
-    <!-- HƯỚNG DẪN -->
-    <div class="guide">
-        <h3>HƯỚNG DẪN CÀI MOD ANDROID</h3>
-        <p>Xem video hướng dẫn cài mod trên Android.</p>
-        <a href="https://youtu.be/u-dV26ZMdwU?si=0RR-N5JpP6MKrSPX" class="video-btn" target="_blank">Xem video</a>
-    </div>
+    <!-- NÚT HƯỚNG DẪN -->
+    <a href="https://youtu.be/u-dV26ZMdwU?si=0RR-N5JpP6MKrSPX" target="_blank" class="guide-btn">
+        📹 HƯỚNG DẪN CÀI MOD ANDROID
+    </a>
 
 </div>
 
