@@ -7,9 +7,12 @@
 <style>
     body {
         font-family: Arial, sans-serif;
-        background: #f7f7f7;
+        background: #f5f5f5;
         margin: 0;
         padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
     }
     header {
         background: white;
@@ -17,125 +20,100 @@
         text-align: center;
         font-size: 22px;
         font-weight: bold;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     .container {
-        max-width: 600px;
-        margin: 20px auto;
-        padding: 0 15px;
+        padding: 20px;
+        flex: 1;
     }
-    .section {
-        background: white;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        margin-bottom: 15px;
-        overflow: hidden;
-    }
-    .section-title {
-        padding: 15px;
-        font-weight: bold;
-        font-size: 16px;
-        cursor: pointer;
-        background: linear-gradient(to right, #8e2de2, #4a00e0);
-        color: white;
-    }
-    .section-content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease, padding 0.4s ease;
-        padding: 0 15px;
-    }
-    .section-content.show {
-        padding: 15px;
-    }
-    .mod {
-        border-radius: 10px;
-        margin-bottom: 10px;
-        background: linear-gradient(to right, #ff4d4f, #ff7a45);
-        padding: 10px;
-        color: white;
-    }
-    .mod:nth-child(2) {
-        background: linear-gradient(to right, #1890ff, #40a9ff);
-    }
-    .mod-title {
-        font-weight: bold;
-        margin-bottom: 5px;
-    }
-    .download-btn {
-        display: inline-block;
-        padding: 6px 12px;
-        border-radius: 8px;
-        font-size: 13px;
-        color: white;
-        background: #00000033;
-        text-decoration: none;
-    }
-    /* Nút hướng dẫn */
-    .guide-btn {
+    .button {
         display: block;
         width: 100%;
         padding: 15px;
         border: none;
         border-radius: 12px;
-        background: linear-gradient(to right, #00b09b, #96c93d);
-        color: white;
         font-size: 16px;
         font-weight: bold;
         text-align: center;
         text-decoration: none;
+        color: white;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         cursor: pointer;
+        margin-bottom: 15px;
+        transition: 0.3s;
     }
-    /* Chữ version */
-    .version {
+    .button:hover {
+        opacity: 0.9;
+    }
+    .button-purple {
+        background: linear-gradient(to right, #8e2de2, #4a00e0);
+    }
+    .button-green {
+        background: linear-gradient(to right, #00b09b, #96c93d);
+    }
+    .mod-list {
+        display: none;
+        margin-top: 10px;
+    }
+    .mod-item {
+        background: white;
+        padding: 12px;
+        border-radius: 8px;
+        margin-bottom: 8px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+    }
+    .download-btn {
+        background: red;
+        color: white;
+        padding: 6px 10px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    footer {
         text-align: center;
         font-size: 12px;
-        color: #888;
-        margin-top: 20px;
-        padding-bottom: 10px;
+        color: #666;
+        padding: 10px;
     }
 </style>
 </head>
 <body>
 
 <header>KazukiAOV</header>
-<div class="container">
 
-    <!-- CHỌN MOD -->
-    <div class="section">
-        <div class="section-title" onclick="toggleSection(this)">CHỌN MOD</div>
-        <div class="section-content">
-            <div class="mod">
-                <div class="mod-title">BILLOW THIÊN TƯỚNG ĐỘ ÁCH</div>
-                <a href="https://link2m.com/m5k0tH" class="download-btn">Tải xuống</a>
-            </div>
-            <div class="mod">
-                <div class="mod-title">HAYATE KAITOKID</div>
-                <a href="https://link2m.com/a4yrB" class="download-btn">Tải xuống</a>
-            </div>
+<div class="container">
+    <!-- Nút chọn mod -->
+    <button class="button button-purple" onclick="toggleMods()">CHỌN MOD</button>
+    <div class="mod-list" id="modList">
+        <div class="mod-item">
+            Billow Thiên Tướng Độ Ách
+            <a class="download-btn" href="https://link2m.com/m5k0tH" target="_blank">Download</a>
+        </div>
+        <div class="mod-item">
+            Hayate KaitoKid
+            <a class="download-btn" href="https://link2m.com/a4yrB" target="_blank">Download</a>
         </div>
     </div>
 
-    <!-- NÚT HƯỚNG DẪN -->
-    <a href="https://youtu.be/u-dV26ZMdwU?si=0RR-N5JpP6MKrSPX" target="_blank" class="guide-btn">
-        📹 HƯỚNG DẪN CÀI MOD ANDROID
-    </a>
-
-    <!-- Phiên bản -->
-    <div class="version">Version 1.0 | KazukiAOV</div>
-
+    <!-- Nút hướng dẫn -->
+    <a href="https://youtu.be/u-dV26ZMdwU?si=0RR-N5JpP6MKrSPX" target="_blank" class="button button-green">HƯỚNG DẪN CÀI MOD ANDROID</a>
 </div>
 
+<footer>Version 1.0 | KazukiAOV</footer>
+
 <script>
-function toggleSection(el) {
-    const content = el.nextElementSibling;
-    if (content.classList.contains('show')) {
-        content.style.maxHeight = null;
-        content.classList.remove('show');
+function toggleMods() {
+    const modList = document.getElementById("modList");
+    if (modList.style.display === "block") {
+        modList.style.display = "none";
     } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-        content.classList.add('show');
+        modList.style.display = "block";
     }
 }
 </script>
