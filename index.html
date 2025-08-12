@@ -24,49 +24,43 @@
         margin: 20px auto;
         padding: 0 15px;
     }
-    h2 {
-        margin-bottom: 5px;
-    }
-    p {
-        margin-top: 0;
-        color: #666;
-    }
-    .mod-list {
-        border-radius: 12px;
+    .section {
         background: white;
-        padding: 15px;
+        border-radius: 12px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        margin-bottom: 15px;
+        overflow: hidden;
+    }
+    .section-title {
+        padding: 15px;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        background: linear-gradient(to right, #8e2de2, #4a00e0);
+        color: white;
+    }
+    .section-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+        padding: 0 15px;
+    }
+    .section-content.show {
+        padding: 15px;
     }
     .mod {
         border-radius: 10px;
         margin-bottom: 10px;
-        background: linear-gradient(to right, #8e2de2, #4a00e0);
-        overflow: hidden;
-        cursor: pointer;
+        background: linear-gradient(to right, #ff4d4f, #ff7a45);
+        padding: 10px;
+        color: white;
+    }
+    .mod:nth-child(2) {
+        background: linear-gradient(to right, #1890ff, #40a9ff);
     }
     .mod-title {
-        padding: 12px;
         font-weight: bold;
-        font-size: 15px;
-        color: white;
-    }
-    .mod-content {
-        max-height: 0;
-        overflow: hidden;
-        background: rgba(255,255,255,0.1);
-        color: white;
-        transition: max-height 0.4s ease, padding 0.4s ease, opacity 0.4s ease;
-        padding: 0 12px;
-        opacity: 0;
-    }
-    .mod-content.show {
-        padding: 12px;
-        opacity: 1;
-    }
-    .mod-desc {
-        font-size: 12px;
-        opacity: 0.9;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
     }
     .download-btn {
         display: inline-block;
@@ -74,14 +68,20 @@
         border-radius: 8px;
         font-size: 13px;
         color: white;
-        background: #ff4d4f;
+        background: #00000033;
         text-decoration: none;
+    }
+    .guide {
+        background: white;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     .video-btn {
         display: inline-block;
-        padding: 6px 12px;
+        padding: 8px 14px;
         border-radius: 8px;
-        font-size: 13px;
+        font-size: 14px;
         color: white;
         background: #1890ff;
         text-decoration: none;
@@ -92,36 +92,34 @@
 
 <header>KazukiAOV</header>
 <div class="container">
-    <h2>CHỌN MOD</h2>
-    <p>Click để chọn một bản mod</p>
-    <div class="mod-list">
-        <div class="mod" onclick="toggleMod(this)">
-            <div class="mod-title">BILLOW THIÊN TƯỚNG ĐỘ ÁCH</div>
-            <div class="mod-content">
-                <div class="mod-desc">Effects - Sound - Button</div>
+
+    <!-- CHỌN MOD -->
+    <div class="section">
+        <div class="section-title" onclick="toggleSection(this)">Chọn Skin Bạn Muốn Mod</div>
+        <div class="section-content">
+            <div class="mod">
+                <div class="mod-title">BILLOW THIÊN TƯỚNG ĐỘ ÁCH</div>
                 <a href="https://link2m.com/m5k0tH" class="download-btn">Tải xuống</a>
             </div>
-        </div>
-        <div class="mod" onclick="toggleMod(this)">
-            <div class="mod-title">HAYATE KAITOKID</div>
-            <div class="mod-content">
-                <div class="mod-desc">Effects - Sound - Button</div>
+            <div class="mod">
+                <div class="mod-title">HAYATE KAITOKID</div>
                 <a href="https://link2m.com/a4yrB" class="download-btn">Tải xuống</a>
             </div>
         </div>
-        <div class="mod" onclick="toggleMod(this)">
-            <div class="mod-title">HƯỚNG DẪN CÀI MOD ANDROID</div>
-            <div class="mod-content">
-                <div class="mod-desc">Video hướng dẫn cài mod cho Android</div>
-                <a href="https://youtu.be/u-dV26ZMdwU?si=0RR-N5JpP6MKrSPX" class="video-btn" target="_blank">Xem video</a>
-            </div>
-        </div>
     </div>
+
+    <!-- HƯỚNG DẪN -->
+    <div class="guide">
+        <h3>HƯỚNG DẪN CÀI MOD ANDROID</h3>
+        <p>Xem video hướng dẫn cài mod trên Android.</p>
+        <a href="https://youtu.be/u-dV26ZMdwU?si=0RR-N5JpP6MKrSPX" class="video-btn" target="_blank">Xem video</a>
+    </div>
+
 </div>
 
 <script>
-function toggleMod(el) {
-    const content = el.querySelector('.mod-content');
+function toggleSection(el) {
+    const content = el.nextElementSibling;
     if (content.classList.contains('show')) {
         content.style.maxHeight = null;
         content.classList.remove('show');
