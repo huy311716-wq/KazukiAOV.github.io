@@ -38,29 +38,37 @@
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     .mod {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 12px;
         border-radius: 10px;
-        color: white;
         margin-bottom: 10px;
         background: linear-gradient(to right, #8e2de2, #4a00e0);
-    }
-    .mod-info {
-        display: flex;
-        flex-direction: column;
+        overflow: hidden;
+        cursor: pointer;
     }
     .mod-title {
+        padding: 12px;
         font-weight: bold;
         font-size: 15px;
+        color: white;
+    }
+    .mod-content {
+        max-height: 0;
+        overflow: hidden;
+        background: rgba(255,255,255,0.1);
+        color: white;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+        padding: 0 12px;
+    }
+    .mod-content.show {
+        padding: 12px;
     }
     .mod-desc {
         font-size: 12px;
-        opacity: 0.8;
+        opacity: 0.9;
+        margin-bottom: 10px;
     }
     .download-btn {
-        padding: 6px 10px;
+        display: inline-block;
+        padding: 6px 12px;
         border-radius: 8px;
         font-size: 13px;
         color: white;
@@ -76,15 +84,28 @@
     <h2>CHỌN MOD</h2>
     <p>Click để chọn một bản mod</p>
     <div class="mod-list">
-        <div class="mod">
-            <div class="mod-info">
-                <div class="mod-title">BILLOW THIÊN TƯỚNG ĐỘ ÁCH</div>
+        <div class="mod" onclick="toggleMod(this)">
+            <div class="mod-title">BILLOW THIÊN TƯỚNG ĐỘ ÁCH</div>
+            <div class="mod-content">
                 <div class="mod-desc">Effects - Sound - Button</div>
+                <a href="https://link2m.com/m5k0tH" class="download-btn">Tải xuống</a>
             </div>
-            <a href="https://link2m.com/m5k0tH" class="download-btn">Tải xuống</a>
         </div>
     </div>
 </div>
+
+<script>
+function toggleMod(el) {
+    const content = el.querySelector('.mod-content');
+    if (content.classList.contains('show')) {
+        content.style.maxHeight = null;
+        content.classList.remove('show');
+    } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        content.classList.add('show');
+    }
+}
+</script>
 
 </body>
 </html>
