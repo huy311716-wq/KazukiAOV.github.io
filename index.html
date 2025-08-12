@@ -1,213 +1,105 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KazukiAOV</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f8f8f8;
-            color: #000;
-        }
-        header {
-            background-color: #fff;
-            padding: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-align: center;
-            font-weight: bold;
-            font-size: 20px;
-        }
-        .card {
-            background: #fff;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 10px;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            cursor: pointer;
-            text-decoration: none;
-            color: #000;
-        }
-        .card:hover {
-            background-color: #f0f0f0;
-        }
-        .icon {
-            font-size: 28px;
-            margin-right: 15px;
-            color: #444;
-        }
-        .text {
-            flex: 1;
-        }
-        .title {
-            font-weight: bold;
-        }
-        .desc {
-            font-size: 13px;
-            color: #555;
-        }
-        .hidden {
-            display: none;
-        }
-        .sub-item {
-            background: #fff;
-            margin: 0 20px 10px 20px;
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            cursor: pointer;
-        }
-        .sub-item:hover {
-            background: #f0f0f0;
-        }
-        .download-btn {
-            display: inline-block;
-            background: #007bff;
-            color: #fff;
-            padding: 8px 15px;
-            border-radius: 6px;
-            text-decoration: none;
-            margin-top: 10px;
-        }
-        .download-btn:hover {
-            background: #0056b3;
-        }
-        footer {
-            text-align: center;
-            font-size: 12px;
-            padding: 10px;
-            color: #555;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KazukiAOV</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f8f8f8;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+        padding: 15px;
+        background: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .mod-container {
+        margin: 15px;
+        border-radius: 15px;
+        padding: 15px;
+        background: white;
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .mod-header {
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    .mod-desc {
+        font-size: 13px;
+        color: gray;
+        margin-bottom: 15px;
+    }
+    .mod-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px;
+        border-radius: 12px;
+        margin-bottom: 10px;
+        background: url('https://i.ibb.co/xHsbM7g/billow-thien-ach.jpg') center/cover no-repeat;
+        color: white;
+    }
+    .mod-overlay {
+        background: rgba(0,0,0,0.4);
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    .mod-info {
+        display: flex;
+        flex-direction: column;
+    }
+    .mod-title {
+        font-weight: bold;
+        font-size: 15px;
+    }
+    .mod-sub {
+        font-size: 12px;
+        opacity: 0.8;
+    }
+    .download-btn {
+        background: #ff4d4d;
+        border: none;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 8px;
+        font-size: 13px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .download-btn:hover {
+        background: #e60000;
+    }
+</style>
 </head>
 <body>
-    <header>KazukiAOV</header>
 
-    <!-- Mục chọn mod -->
-    <div class="card" onclick="toggleMods()">
-        <span class="material-icons icon">apps</span>
-        <div class="text">
-            <div class="title">CHỌN MOD</div>
-            <div class="desc">Click để chọn một bản mod</div>
+<header>KazukiAOV</header>
+
+<div class="mod-container">
+    <div class="mod-header">CHỌN MOD</div>
+    <div class="mod-desc">Click để chọn một bản mod</div>
+
+    <div class="mod-item">
+        <div class="mod-overlay">
+            <div class="mod-info">
+                <div class="mod-title">Billow Thiên Ách Độ tướng sáng đậm</div>
+                <div class="mod-sub">Effects - Sound - Button</div>
+            </div>
+            <a href="https://link2m.com/m5k0tH" target="_blank" class="download-btn">Tải xuống</a>
         </div>
     </div>
+</div>
 
-    <!-- Danh sách mod con -->
-    <div id="modList" class="hidden">
-        <div class="sub-item" onclick="showDownload('https://link2m.com/m5k0tH')">
-            Mod skin Billow Thiên Ách Độ tướng sáng đậm
-        </div>
-    </div>
-
-    <!-- Nút download -->
-    <div id="downloadSection" class="hidden" style="text-align:center; padding:20px;">
-        <p>Bấm để tải xuống:</p>
-        <a id="downloadLink" href="#" target="_blank" class="download-btn">Download</a>
-    </div>
-
-    <footer>©KazukiAOV | Ver1.0</footer>
-
-    <script>
-        function toggleMods() {
-            const modList = document.getElementById('modList');
-            modList.classList.toggle('hidden');
-        }
-        function showDownload(link) {
-            const downloadSection = document.getElementById('downloadSection');
-            const downloadLink = document.getElementById('downloadLink');
-            downloadLink.href = link;
-            downloadSection.classList.remove('hidden');
-            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-        }
-    </script>
 </body>
-</html>        }
-        .icon {
-            font-size: 28px;
-            margin-right: 15px;
-            color: #444;
-        }
-        .text {
-            flex: 1;
-        }
-        .title {
-            font-weight: bold;
-        }
-        .desc {
-            font-size: 13px;
-            color: #555;
-        }
-        footer {
-            text-align: center;
-            font-size: 12px;
-            padding: 10px;
-            color: #555;
-        }
-    </style>
-</head>
-<body>
-    <header>DATALLAIN WEBPAGE</header>
-
-    <a class="card" href="#">
-        <span class="material-icons icon">emoji_events</span>
-        <div class="text">
-            <div class="title">DONATE</div>
-            <div class="desc">Donate cho admin để ra mod nhanh hơn 🐧</div>
-        </div>
-    </a>
-
-    <a class="card" href="#">
-        <span class="material-icons icon">apps</span>
-        <div class="text">
-            <div class="title">CHỌN MOD</div>
-            <div class="desc">Click để chọn một bản mod</div>
-        </div>
-    </a>
-
-    <a class="card" href="#">
-        <span class="material-icons icon">phone_iphone</span>
-        <div class="text">
-            <div class="title">HƯỚNG DẪN CÀI MOD [iOS]</div>
-            <div class="desc">Click để xem hướng dẫn cài mod iOS</div>
-        </div>
-    </a>
-
-    <a class="card" href="#">
-        <span class="material-icons icon">android</span>
-        <div class="text">
-            <div class="title">HƯỚNG DẪN CÀI MOD - XOÁ MOD [Android]</div>
-            <div class="desc">Click để xem hướng dẫn cài mod, xoá mod Android</div>
-        </div>
-    </a>
-
-    <a class="card" href="#">
-        <span class="material-icons icon">folder</span>
-        <div class="text">
-            <div class="title">RESOURCES 6thg8 [Android]</div>
-            <div class="desc">Click để tải Resources Android mới nhất</div>
-        </div>
-    </a>
-
-    <a class="card" href="#">
-        <span class="material-icons icon">photo_library</span>
-        <div class="text">
-            <div class="title">THƯ VIỆN SPLASH ART AOV</div>
-            <div class="desc">Click để xem splash art tướng</div>
-        </div>
-    </a>
-
-    <a class="card" href="#">
-        <span class="material-icons icon">list</span>
-        <div class="text">
-            <div class="title">DANH SÁCH MÁY CHỦ AOV</div>
-            <div class="desc">Click để xem hoặc tải APK/XAPK</div>
-        </div>
-    </a>
-
-    <footer>©datallain07 | Ver1.2.9</footer>
-</body>
-    </html>
+</html>
