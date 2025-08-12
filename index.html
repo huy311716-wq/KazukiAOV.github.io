@@ -7,79 +7,76 @@
 <style>
     body {
         font-family: Arial, sans-serif;
-        background: #f5f5f5;
+        background-color: #f9f9f9;
         margin: 0;
         padding: 0;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
     }
     header {
         background: white;
         padding: 15px;
         text-align: center;
-        font-size: 22px;
         font-weight: bold;
+        font-size: 20px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     .container {
-        padding: 20px;
-        flex: 1;
-    }
-    .button {
-        display: block;
-        width: 100%;
         padding: 15px;
-        border: none;
-        border-radius: 12px;
-        font-size: 16px;
-        font-weight: bold;
-        text-align: center;
-        text-decoration: none;
-        color: white;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .card {
+        background: white;
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         cursor: pointer;
-        margin-bottom: 15px;
-        transition: 0.3s;
+        transition: background 0.3s;
     }
-    .button:hover {
-        opacity: 0.9;
+    .card:hover {
+        background: #f1f1f1;
     }
-    .button-purple {
-        background: linear-gradient(to right, #8e2de2, #4a00e0);
+    .card-content {
+        display: flex;
+        align-items: center;
     }
-    .button-green {
-        background: linear-gradient(to right, #00b09b, #96c93d);
+    .icon {
+        font-size: 24px;
+        margin-right: 10px;
+    }
+    .title {
+        font-weight: bold;
+    }
+    .desc {
+        font-size: 12px;
+        color: #666;
     }
     .mod-list {
         display: none;
-        margin-top: 10px;
+        margin-top: 5px;
+        padding-left: 35px;
     }
     .mod-item {
         background: white;
-        padding: 12px;
         border-radius: 8px;
-        margin-bottom: 8px;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        padding: 10px;
+        margin-top: 5px;
         font-size: 14px;
-    }
-    .download-btn {
-        background: red;
-        color: white;
-        padding: 6px 10px;
-        border-radius: 6px;
+        color: #007BFF;
         text-decoration: none;
-        font-size: 12px;
-        font-weight: bold;
+        display: block;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        transition: background 0.3s;
+    }
+    .mod-item:hover {
+        background: #f1f1f1;
     }
     footer {
         text-align: center;
         font-size: 12px;
         color: #666;
-        padding: 10px;
+        margin: 20px 0;
     }
 </style>
 </head>
@@ -88,28 +85,42 @@
 <header>KazukiAOV</header>
 
 <div class="container">
-    <!-- Nút chọn mod -->
-    <button class="button button-purple" onclick="toggleMods()">CHỌN MOD</button>
-    <div class="mod-list" id="modList">
-        <div class="mod-item">
-            Billow Thiên Tướng Độ Ách
-            <a class="download-btn" href="https://link2m.com/m5k0tH" target="_blank">Download</a>
+
+    <!-- CHỌN MOD -->
+    <div class="card" onclick="toggleMods()">
+        <div class="card-content">
+            <div class="icon">📦</div>
+            <div>
+                <div class="title">CHỌN MOD</div>
+                <div class="desc">Click để chọn một bản mod</div>
+            </div>
         </div>
-        <div class="mod-item">
-            Hayate KaitoKid
-            <a class="download-btn" href="https://link2m.com/a4yrB" target="_blank">Download</a>
-        </div>
+        <div>▼</div>
+    </div>
+    <div id="modList" class="mod-list">
+        <a href="https://link2m.com/m5k0tH" target="_blank" class="mod-item">Billow Thiên Tướng Độ Ách</a>
+        <a href="https://link2m.com/a4yrB" target="_blank" class="mod-item">Hayate KaitoKid</a>
     </div>
 
-    <!-- Nút hướng dẫn -->
-    <a href="https://youtu.be/u-dV26ZMdwU?si=0RR-N5JpP6MKrSPX" target="_blank" class="button button-green">HƯỚNG DẪN CÀI MOD ANDROID</a>
+    <!-- HƯỚNG DẪN -->
+    <a href="https://youtu.be/u-dV26ZMdwU?si=0RR-N5JpP6MKrSPX" target="_blank" class="card">
+        <div class="card-content">
+            <div class="icon">🎥</div>
+            <div>
+                <div class="title">HƯỚNG DẪN CÀI MOD ANDROID</div>
+                <div class="desc">Click để xem video hướng dẫn</div>
+            </div>
+        </div>
+        <div>▶</div>
+    </a>
+
 </div>
 
 <footer>Version 1.0 | KazukiAOV</footer>
 
 <script>
 function toggleMods() {
-    const modList = document.getElementById("modList");
+    let modList = document.getElementById("modList");
     if (modList.style.display === "block") {
         modList.style.display = "none";
     } else {
