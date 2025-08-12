@@ -31,49 +31,41 @@
         margin-top: 0;
         color: #666;
     }
-    .mod {
-        background: white;
+    .mod-list {
         border-radius: 12px;
+        background: white;
+        padding: 15px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .mod {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px;
+        border-radius: 10px;
+        color: white;
         margin-bottom: 10px;
-        overflow: hidden;
-        transition: all 0.3s ease;
+        background: linear-gradient(to right, #8e2de2, #4a00e0);
     }
-    .mod-header {
-        padding: 15px;
-        cursor: pointer;
+    .mod-info {
+        display: flex;
+        flex-direction: column;
+    }
+    .mod-title {
         font-weight: bold;
-        border-bottom: 1px solid #f0f0f0;
-    }
-    .mod-header:hover {
-        background: #f9f9f9;
-    }
-    .mod-content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease;
-        padding: 0 15px;
-    }
-    .mod-content.open {
-        padding: 15px;
+        font-size: 15px;
     }
     .mod-desc {
-        font-size: 13px;
-        color: #888;
-        margin-bottom: 10px;
+        font-size: 12px;
+        opacity: 0.8;
     }
     .download-btn {
-        background: #ff4d4f;
-        color: white;
-        padding: 8px 12px;
-        border: none;
+        padding: 6px 10px;
         border-radius: 8px;
+        font-size: 13px;
+        color: white;
+        background: #ff4d4f;
         text-decoration: none;
-        font-size: 14px;
-        display: inline-block;
-    }
-    .download-btn:hover {
-        background: #d9363e;
     }
 </style>
 </head>
@@ -82,56 +74,17 @@
 <header>KazukiAOV</header>
 <div class="container">
     <h2>CHỌN MOD</h2>
-    <p>Click để mở danh sách tải xuống</p>
-
-    <!-- Mod 1 -->
-    <div class="mod">
-        <div class="mod-header">Billow Thiên Ách Độ tướng sáng đậm</div>
-        <div class="mod-content">
-            <div class="mod-desc">Effects - Sound - Button</div>
-            <a href="https://link2m.com/m5k0tH" class="download-btn" target="_blank">Tải xuống</a>
-        </div>
-    </div>
-
-    <!-- Mod 2 -->
-    <div class="mod">
-        <div class="mod-header">Mod Skin 2</div>
-        <div class="mod-content">
-            <div class="mod-desc">Effects - Sound</div>
-            <a href="#" class="download-btn" target="_blank">Tải xuống</a>
-        </div>
-    </div>
-
-    <!-- Mod 3 -->
-    <div class="mod">
-        <div class="mod-header">Mod Skin 3</div>
-        <div class="mod-content">
-            <div class="mod-desc">Effects Only</div>
-            <a href="#" class="download-btn" target="_blank">Tải xuống</a>
+    <p>Click để chọn một bản mod</p>
+    <div class="mod-list">
+        <div class="mod">
+            <div class="mod-info">
+                <div class="mod-title">BILLOW THIÊN TƯỚNG ĐỘ ÁCH</div>
+                <div class="mod-desc">Effects - Sound - Button</div>
+            </div>
+            <a href="https://link2m.com/m5k0tH" class="download-btn">Tải xuống</a>
         </div>
     </div>
 </div>
-
-<script>
-    document.querySelectorAll('.mod-header').forEach(header => {
-        header.addEventListener('click', () => {
-            const content = header.nextElementSibling;
-            const isOpen = content.style.maxHeight && content.style.maxHeight !== "0px";
-
-            // Đóng tất cả trước
-            document.querySelectorAll('.mod-content').forEach(c => {
-                c.style.maxHeight = null;
-                c.classList.remove('open');
-            });
-
-            // Nếu chưa mở thì mở mod vừa click
-            if (!isOpen) {
-                content.style.maxHeight = content.scrollHeight + "px";
-                content.classList.add('open');
-            }
-        });
-    });
-</script>
 
 </body>
 </html>
