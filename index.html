@@ -5,105 +5,15 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>KazukiAOV</title>
 <style>
-  :root {
-    --accent1: #8e2de2;
-    --accent2: #4a00e0;
-  }
-  body {
-    font-family: Arial, sans-serif;
-    background: #f9f9f9;
-    margin: 0;
-    padding: 0;
-  }
-  header {
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-    padding: 10px 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .logo-wrap svg {
-    height: 44px;
-    width: auto;
-  }
-  .site-title {
-    font-weight: 700;
-    font-size: 18px;
-    color: #222;
-  }
-  .container {
-    padding: 16px;
-    max-width: 720px;
-    margin: 0 auto;
-  }
-  .card {
-    background: #fff;
-    border-radius: 10px;
-    padding: 14px;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-    cursor: pointer;
-    transition: background 0.18s;
-  }
-  .card:hover {
-    background: #f3f3f3;
-  }
-  .card .left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .icon {
-    font-size: 22px;
-  }
-  .title {
-    font-weight: 700;
-  }
-  .desc {
-    font-size: 12px;
-    color: #666;
-  }
-  .mod-list {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.45s ease;
-    padding-left: 36px;
-  }
-  .mod-list.open {
-    max-height: 700px;
-  }
-  .mod-item {
-    display: block;
-    background: #fff;
-    padding: 10px;
-    margin-top: 8px;
-    border-radius: 8px;
-    font-size: 14px;
-    color: #007bff;
-    text-decoration: none;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-  }
-  .mod-item:hover {
-    background: #f6faff;
-  }
-  .guide-card {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    color: inherit;
-    margin-top: 20px; /* Khoảng cách thêm */
-  }
-  footer {
-    text-align: center;
-    color: #777;
-    font-size: 12px;
-    padding: 18px 0;
-  }
+  body{font-family:Arial, sans-serif;margin:0;background:#f9f9f9}
+  header{background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.08);padding:12px 16px;font-weight:700}
+  .container{max-width:720px;margin:0 auto;padding:16px}
+  .card{background:#fff;border-radius:10px;padding:14px;margin-bottom:12px;box-shadow:0 2px 6px rgba(0,0,0,.06);display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+  .mod-list{max-height:0;overflow:hidden;transition:max-height .45s ease;padding-left:36px}
+  .mod-list.open{max-height:400px}
+  .mod-item{display:block;background:#fff;margin-top:8px;padding:10px;border-radius:8px;color:#007bff;text-decoration:none;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+  .guide-card{display:flex;gap:12px;align-items:center;text-decoration:none;color:inherit;margin-top:20px}
+  footer{text-align:center;color:#777;font-size:12px;padding:18px 0}
 </style>
 </head>
 <body>
@@ -113,48 +23,21 @@
   <source src="videoplayback1.mp3" type="audio/mpeg">
 </audio>
 
-<header>
-  <div class="logo-wrap">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 120" aria-label="KazukiAOV logo" role="img">
-      <defs>
-        <linearGradient id="g1" x1="0" x2="1">
-          <stop offset="0" stop-color="var(--accent1)"/>
-          <stop offset="1" stop-color="var(--accent2)"/>
-        </linearGradient>
-      </defs>
-      <text x="10" y="70" font-family="Segoe UI, Roboto, Arial" font-weight="700" font-size="48" fill="url(#g1)">K</text>
-      <text x="55" y="70" font-family="Segoe UI, Roboto, Arial" font-weight="700" font-size="36" fill="url(#g1)">azukiAOV</text>
-    </svg>
-    <div class="site-title">KazukiAOV</div>
-  </div>
-</header>
+<header>KazukiAOV</header>
 
 <div class="container">
   <!-- CHỌN MOD -->
   <div class="card" onclick="toggleMods()">
-    <div class="left">
-      <div class="icon">📦</div>
-      <div>
-        <div class="title">CHỌN MOD</div>
-        <div class="desc">Click để chọn một bản mod</div>
-      </div>
-    </div>
-    <div>▼</div>
+    <div>📦 CHỌN MOD</div><div>▼</div>
   </div>
   <div id="modList" class="mod-list" aria-hidden="true">
     <a class="mod-item" href="https://link2m.com/mGEh06Cn" target="_blank" rel="noopener">Nakroth Thứ Nguyên Vệ Thần</a>
+    <a class="mod-item" href="https://www.mediafire.com/file/pn9ntiofffoedpj/Resources.zip/file" target="_blank" rel="noopener">Resources 14/8/2025</a>
   </div>
 
-  <!-- HƯỚNG DẪN -->
+  <!-- HƯỚNG DẪN (để riêng) -->
   <a class="card guide-card" href="https://youtu.be/u-dV26ZMdwU?si=0RR-N5JpP6MKrSPX" target="_blank" rel="noopener">
-    <div class="left">
-      <div class="icon">🎥</div>
-      <div>
-        <div class="title">HƯỚNG DẪN CÀI MOD ANDROID</div>
-        <div class="desc">Xem video hướng dẫn</div>
-      </div>
-    </div>
-    <div>▶</div>
+    <div>🎥 HƯỚNG DẪN CÀI MOD ANDROID</div><div>▶</div>
   </a>
 </div>
 
@@ -162,16 +45,14 @@
 
 <script>
 function toggleMods(){
-  const list = document.getElementById('modList');
-  const open = list.classList.toggle('open');
+  const list=document.getElementById('modList');
+  const open=list.classList.toggle('open');
   list.setAttribute('aria-hidden', !open);
 }
+// Unmute nhạc khi user tương tác
 document.addEventListener('pointerdown', function once(){
-  const bg = document.getElementById('bgMusic');
-  if(bg && bg.muted){
-    bg.muted = false;
-    bg.play().catch(() => {});
-  }
+  const bg=document.getElementById('bgMusic');
+  if(bg){ bg.muted=false; bg.play().catch(()=>{}); }
   document.removeEventListener('pointerdown', once);
 });
 </script>
