@@ -12,8 +12,69 @@
   .card{background:#fff;border-radius:10px;padding:14px;margin-bottom:12px;box-shadow:0 2px 6px rgba(0,0,0,.06);display:flex;justify-content:space-between;align-items:center;cursor:pointer}
   .mod-list{max-height:0;overflow:hidden;transition:max-height .45s ease;padding-left:10px}
   .mod-list.open{max-height:1000px}
-  .mod-item{display:flex;align-items:center;gap:12px;background:#fff;margin-top:8px;padding:10px;border-radius:8px;color:#007bff;text-decoration:none;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+
+  /* Item tướng */
+  .mod-item {
+    display:flex;
+    align-items:center;
+    gap:12px;
+    background:#fff;
+    margin-top:8px;
+    padding:10px;
+    border-radius:10px;
+    box-shadow:0 1px 4px rgba(0,0,0,.06);
+    position:relative;
+    cursor:pointer;
+    overflow:hidden;
+    transition:all 0.3s ease;
+  }
   .mod-item img{width:60px;height:60px;object-fit:cover;border-radius:6px}
+  .mod-item span{font-weight:500}
+  .mod-item .download {
+    display:none;
+    margin-left:auto;
+  }
+  /* Hiệu ứng viền 7 màu */
+  .mod-item.active {
+    border:3px solid transparent;
+    background:#fff;
+    background-clip:padding-box;
+  }
+  .mod-item.active::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    padding:3px;
+    border-radius:inherit;
+    background:linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
+    background-size:400% 400%;
+    animation:rainbow 5s linear infinite;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+  }
+  @keyframes rainbow {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  .mod-item.active .download {
+    display:block;
+  }
+  .download a {
+    background:#007bff;
+    color:#fff;
+    padding:6px 12px;
+    border-radius:6px;
+    text-decoration:none;
+    font-size:14px;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+    transition:background 0.3s ease;
+  }
+  .download a:hover {background:#0056b3}
+
   .link-card{display:flex;gap:12px;align-items:center;text-decoration:none;color:inherit}
   footer{text-align:center;color:#777;font-size:12px;padding:18px 0}
 </style>
@@ -38,25 +99,37 @@
   </div>
   <div id="modList" class="mod-list" aria-hidden="true">
     <!-- Nakroth -->
-    <a class="mod-item" href="https://link2m.com/mGEh06Cn" target="_blank" rel="noopener">
+    <div class="mod-item" onclick="toggleMod(this)">
       <img src="NakrothVeThan.jpg" alt="Nakroth">
       <span>Nakroth Thứ Nguyên Vệ Thần</span>
-    </a>
+      <div class="download">
+        <a href="https://link2m.com/mGEh06Cn" target="_blank">⬇ Download</a>
+      </div>
+    </div>
     <!-- Conan -->
-    <a class="mod-item" href="https://link2m.com/FeauHHY" target="_blank" rel="noopener">
+    <div class="mod-item" onclick="toggleMod(this)">
       <img src="conan.jpg" alt="Conan">
       <span>Conan Edogawa (Skin Hợp Tác)</span>
-    </a>
+      <div class="download">
+        <a href="https://link2m.com/FeauHHY" target="_blank">⬇ Download</a>
+      </div>
+    </div>
     <!-- Paine -->
-    <a class="mod-item" href="https://link2m.com/cJc70H" target="_blank" rel="noopener">
+    <div class="mod-item" onclick="toggleMod(this)">
       <img src="Paine.jpg" alt="Paine">
       <span>Paine Megumi</span>
-    </a>
+      <div class="download">
+        <a href="https://link2m.com/cJc70H" target="_blank">⬇ Download</a>
+      </div>
+    </div>
     <!-- Hayate -->
-    <a class="mod-item" href="https://link2m.com/4Tv8Gi7x" target="_blank" rel="noopener">
+    <div class="mod-item" onclick="toggleMod(this)">
       <img src="Kaitokid.jpg" alt="Hayate">
       <span>Hayate Kaitokid (Skin Hợp Tác)</span>
-    </a>
+      <div class="download">
+        <a href="https://link2m.com/4Tv8Gi7x" target="_blank">⬇ Download</a>
+      </div>
+    </div>
   </div>
 
   <!-- HƯỚNG DẪN -->
@@ -78,6 +151,12 @@ function toggleMods(){
   const open=list.classList.toggle('open');
   list.setAttribute('aria-hidden', !open);
 }
+function toggleMod(el){
+  document.querySelectorAll('.mod-item').forEach(item=>{
+    if(item!==el) item.classList.remove('active');
+  });
+  el.classList.toggle('active');
+}
 // Unmute nhạc khi user tương tác
 document.addEventListener('pointerdown', function once(){
   const bg=document.getElementById('bgMusic');
@@ -87,4 +166,4 @@ document.addEventListener('pointerdown', function once(){
 </script>
 
 </body>
-</html>
+      </html>
