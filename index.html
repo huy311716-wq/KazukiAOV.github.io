@@ -6,11 +6,12 @@
 <title>KazukiAOV</title>
 <style>
   body{font-family:Arial, sans-serif;margin:0;background:#f9f9f9}
-  header{background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.08);padding:12px 16px;font-weight:700}
+  header{background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.08);padding:12px 16px;font-weight:700;display:flex;align-items:center;gap:8px;justify-content:center}
+  header img{height:50px}
   .container{max-width:720px;margin:0 auto;padding:16px}
   .card{background:#fff;border-radius:10px;padding:14px;margin-bottom:12px;box-shadow:0 2px 6px rgba(0,0,0,.06);display:flex;justify-content:space-between;align-items:center;cursor:pointer}
   .mod-list{max-height:0;overflow:hidden;transition:max-height .45s ease;padding-left:36px}
-  .mod-list.open{max-height:800px}
+  .mod-list.open{max-height:400px}
   .mod-item{display:block;background:#fff;margin-top:8px;padding:10px;border-radius:8px;color:#007bff;text-decoration:none;box-shadow:0 1px 4px rgba(0,0,0,.06)}
   .link-card{display:flex;gap:12px;align-items:center;text-decoration:none;color:inherit}
   footer{text-align:center;color:#777;font-size:12px;padding:18px 0}
@@ -23,7 +24,11 @@
   <source src="videoplayback1.mp3" type="audio/mpeg">
 </audio>
 
-<header>KazukiAOV</header>
+<!-- Header có logo -->
+<header>
+  <img src="logo.png" alt="KazukiAOV Logo">
+  <span>KazukiAOV</span>
+</header>
 
 <div class="container">
   <!-- CHỌN MOD -->
@@ -48,7 +53,7 @@
   </a>
 </div>
 
-<footer>Version 1.0 | KazukiAOV</footer>
+<footer>Version 1.1 | KazukiAOV</footer>
 
 <script>
 function toggleMods(){
