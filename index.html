@@ -10,9 +10,10 @@
   header img{height:50px}
   .container{max-width:720px;margin:0 auto;padding:16px}
   .card{background:#fff;border-radius:10px;padding:14px;margin-bottom:12px;box-shadow:0 2px 6px rgba(0,0,0,.06);display:flex;justify-content:space-between;align-items:center;cursor:pointer}
-  .mod-list{max-height:0;overflow:hidden;transition:max-height .45s ease;padding-left:36px}
-  .mod-list.open{max-height:400px}
-  .mod-item{display:block;background:#fff;margin-top:8px;padding:10px;border-radius:8px;color:#007bff;text-decoration:none;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+  .mod-list{max-height:0;overflow:hidden;transition:max-height .45s ease;padding-left:10px}
+  .mod-list.open{max-height:1000px}
+  .mod-item{display:flex;align-items:center;gap:12px;background:#fff;margin-top:8px;padding:10px;border-radius:8px;color:#007bff;text-decoration:none;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+  .mod-item img{width:60px;height:60px;object-fit:cover;border-radius:6px}
   .link-card{display:flex;gap:12px;align-items:center;text-decoration:none;color:inherit}
   footer{text-align:center;color:#777;font-size:12px;padding:18px 0}
 </style>
@@ -36,10 +37,26 @@
     <div>📦 CHỌN MOD</div><div>▼</div>
   </div>
   <div id="modList" class="mod-list" aria-hidden="true">
-    <a class="mod-item" href="https://link2m.com/mGEh06Cn" target="_blank" rel="noopener">Nakroth Thứ Nguyên Vệ Thần</a>
-    <a class="mod-item" href="https://link2m.com/FeauHHY" target="_blank" rel="noopener">Conan Edogawa (Skin Hợp Tác)</a>
-    <a class="mod-item" href="https://link2m.com/cJc70H" target="_blank" rel="noopener">Paine Megumi</a>
-    <a class="mod-item" href="https://link2m.com/4Tv8Gi7x" target="_blank" rel="noopener">Hayate Kaitokid (Skin Hợp Tác)</a>
+    <!-- Nakroth -->
+    <a class="mod-item" href="https://link2m.com/mGEh06Cn" target="_blank" rel="noopener">
+      <img src="NakrothVeThan.jpg" alt="Nakroth">
+      <span>Nakroth Thứ Nguyên Vệ Thần</span>
+    </a>
+    <!-- Conan -->
+    <a class="mod-item" href="https://link2m.com/FeauHHY" target="_blank" rel="noopener">
+      <img src="conan.jpg" alt="Conan">
+      <span>Conan Edogawa (Skin Hợp Tác)</span>
+    </a>
+    <!-- Paine -->
+    <a class="mod-item" href="https://link2m.com/cJc70H" target="_blank" rel="noopener">
+      <img src="Paine.jpg" alt="Paine">
+      <span>Paine Megumi</span>
+    </a>
+    <!-- Hayate -->
+    <a class="mod-item" href="https://link2m.com/4Tv8Gi7x" target="_blank" rel="noopener">
+      <img src="Kaitokid.jpg" alt="Hayate">
+      <span>Hayate Kaitokid (Skin Hợp Tác)</span>
+    </a>
   </div>
 
   <!-- HƯỚNG DẪN -->
@@ -53,7 +70,7 @@
   </a>
 </div>
 
-<footer>Version 1.1 | KazukiAOV</footer>
+<footer>Version 1.0 | KazukiAOV</footer>
 
 <script>
 function toggleMods(){
