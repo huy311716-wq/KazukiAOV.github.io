@@ -51,7 +51,12 @@
     box-shadow:-2px 0 8px rgba(0,0,0,.2);padding:20px;transition:right .3s ease;z-index:2000}
   .side-menu.open{right:0}
   .side-menu .close{position:absolute;top:12px;right:14px;font-size:22px;cursor:pointer}
-  .side-menu a{display:block;padding:10px 0;color:#333;text-decoration:none;font-weight:600}
+  .side-menu button,.side-menu a{
+    display:block;width:100%;padding:12px;margin:10px 0;text-align:center;
+    border:none;border-radius:8px;font-weight:600;text-decoration:none;cursor:pointer
+  }
+  .side-menu button{background:#007bff;color:#fff}
+  .side-menu a{background:#ff0000;color:#fff}
 </style>
 </head>
 <body>
@@ -118,10 +123,8 @@
 <!-- Side Menu -->
 <div id="sideMenu" class="side-menu">
   <span class="close" onclick="closeMenu()">❌</span>
-  <a href="#">Trang chủ</a>
-  <a href="#">Hướng dẫn</a>
-  <a href="#">Resources</a>
-  <a href="https://youtube.com" target="_blank">Youtube</a>
+  <button onclick="toggleMusic()">🎵 Bật/Tắt nhạc</button>
+  <a href="https://youtube.com" target="_blank">▶ Youtube</a>
 </div>
 
 <script>
@@ -148,6 +151,12 @@ function openMenu(){
 }
 function closeMenu(){
   document.getElementById('sideMenu').classList.remove('open');
+}
+
+// Music toggle
+function toggleMusic(){
+  const music=document.getElementById('bgMusic');
+  if(music.paused){music.play();} else {music.pause();}
 }
 </script>
 
