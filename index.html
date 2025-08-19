@@ -9,8 +9,6 @@
   header{background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.08);padding:12px 16px;
     font-weight:700;display:flex;align-items:center;gap:8px;justify-content:center}
   header img{height:50px}
-  header span{font-size:18px}
-
   .container{max-width:720px;margin:0 auto;padding:16px}
   .card{background:#fff;border-radius:10px;padding:14px;margin-bottom:12px;
     box-shadow:0 2px 6px rgba(0,0,0,.06);display:flex;justify-content:space-between;
@@ -54,7 +52,7 @@
   <source src="videoplayback1.mp3" type="audio/mpeg">
 </audio>
 
-<!-- Header -->
+<!-- Header có logo -->
 <header>
   <img src="2025080208421268.png" alt="KazukiAOV Logo">
   <span>KazukiAOV</span>
@@ -66,18 +64,29 @@
     <div>📦 CHỌN MOD</div><div>▼</div>
   </div>
   <div id="modList" class="mod-list" aria-hidden="true">
+    <!-- Nakroth Thứ Nguyên Vệ Thần -->
     <div class="mod-item" onclick="openPopup('Nakroth Thứ Nguyên Vệ Thần','NakrothVeThan.jpg','https://link2m.com/mGEh06Cn')">
       <img src="NakrothVeThan.jpg" alt="Nakroth">
       <span>Nakroth Thứ Nguyên Vệ Thần</span>
     </div>
+
+    <!-- Nakroth Bạch Diện Chiến Thương -->
+    <div class="mod-item" onclick="openPopup('Nakroth Bạch Diện Chiến Thương','Nakrothbdct.jpg','https://www.mediafire.com/file/9fecu1j7spvbifq/Mod+Skin+Nakroth+Bạch+Diện+Chiến+Thương.7z/file')">
+      <img src="Nakrothbdct.jpg" alt="Nakroth Bạch Diện Chiến Thương">
+      <span>Nakroth Bạch Diện Chiến Thương</span>
+    </div>
+
+    <!-- Conan -->
     <div class="mod-item" onclick="openPopup('Conan Edogawa (Skin Hợp Tác)','conan.jpg','https://link2m.com/FeauHHY')">
       <img src="conan.jpg" alt="Conan">
       <span>Conan Edogawa (Skin Hợp Tác)</span>
     </div>
+    <!-- Paine -->
     <div class="mod-item" onclick="openPopup('Paine Megumi','Paine.jpg','https://link2m.com/cJc70H')">
       <img src="Paine.jpg" alt="Paine">
       <span>Paine Megumi</span>
     </div>
+    <!-- Hayate -->
     <div class="mod-item" onclick="openPopup('Hayate Kaitokid (Skin Hợp Tác)','Kaitokid.jpg','https://link2m.com/4Tv8Gi7x')">
       <img src="Kaitokid.jpg" alt="Hayate">
       <span>Hayate Kaitokid (Skin Hợp Tác)</span>
@@ -114,6 +123,7 @@ function toggleMods(){
   list.setAttribute('aria-hidden', !open);
 }
 
+// Popup
 function openPopup(title,img,link){
   document.getElementById('popupTitle').innerText=title;
   document.getElementById('popupImg').src=img;
